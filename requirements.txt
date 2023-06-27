@@ -1,0 +1,4 @@
+jupyter
+notebook
+openai
+python-dotenv
