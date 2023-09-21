@@ -2,3 +2,4 @@ jupyter
 notebook
 openai
 python-dotenv
+redlines
