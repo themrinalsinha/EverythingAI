@@ -3,3 +3,4 @@ notebook
 openai
 python-dotenv
 redlines
+panel
