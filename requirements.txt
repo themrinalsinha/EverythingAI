@@ -6,3 +6,4 @@ redlines
 panel
 langchain
 tiktoken
+langchain[docarray]
