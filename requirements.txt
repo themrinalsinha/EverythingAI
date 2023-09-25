@@ -9,3 +9,5 @@ tiktoken
 langchain[docarray]
 datetime
 wikipedia
+torch
+lamini
