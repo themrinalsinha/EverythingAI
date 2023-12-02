@@ -13,3 +13,4 @@ torch
 lamini
 metaflow
 mlflow
+pandas-summary
