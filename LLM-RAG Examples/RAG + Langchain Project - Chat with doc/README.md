@@ -40,3 +40,10 @@ The distance between these vectors can then be calculated pretty easily using co
   print(x)
   {'score': 0.13493....}
   ```
+
+### Query for relevant data
+Now that we have split the data into chunks and stored it into a vector db.
+We can now query the database to get the relevant data from the database.
+
+For the query, we'll need the database that we've created earlier, and we'll also need the embeddings for the query that we want to search for.
+![alt text](assets/preparing_dataset_6.png)
