@@ -72,6 +72,7 @@ cover/
 
 # Django stuff:
 *.log
+*.sqlite3
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -194,3 +195,4 @@ pyvenv.cfg
 pip-selfcheck.json
 
 .DS_Store
+database

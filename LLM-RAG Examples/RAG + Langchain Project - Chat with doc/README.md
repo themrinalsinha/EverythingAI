@@ -10,3 +10,8 @@
 - If your one document is too long, than it is recommended to split the document into multiple chunks.
   ![alt text](assets/preparing_dataset_3.png)
 - Code to split the document into multiple chunks. (`create_database.py`)
+- Once the data chunks is prepared, we need to store this data into a datastore, which in our case will be `chroma` database
+  - https://github.com/chroma-core/chroma
+  - Chroma is the AI-native open-source vector database. Chroma makes it easy to build LLM apps by making knowledge, facts, and skills pluggable for LLMs.
+  - To store created chunks, we can use chroma database as shown below.
+  ![alt text](assets/preparing_dataset_4.png)
