@@ -13,3 +13,6 @@ We'll see how to get LLM running locally on the computer using open source LLMs,
 - Then when we want to ask a question, we'll also turn on our query into an embedding, which will help us fetch the most relevant entries from the database.
   ![alt text](assets/image_2.png)
 - We'll then pass these fetched entries together in the prompt and that's how we'll get our final response.
+
+## Embedding function:
+Once the document is split into chunks, we'll have to create embedding for each chunk. This will become something like a key for a database.

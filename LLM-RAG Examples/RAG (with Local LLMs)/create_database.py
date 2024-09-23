@@ -8,18 +8,11 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 from langchain_chroma import Chroma
 
-from langchain_community.embeddings.ollama import OllamaEmbeddings
-from langchain_community.embeddings.bedrock import BedrockEmbeddings
+from get_embedding_func import get_embedding_function
 
 
-# creating embedding function
-def get_embedding_function():
-    # embedding = BedrockEmbeddings(
-    #     credentials_profile_name="default",
-    #     region_name="us-west-2",
-    # )
-    embedding = OllamaEmbeddings(model="nomic-embed-text")
-    return embedding
+DATABASE = "database/chroma"
+
 
 def load_document():
     loader = PyPDFDirectoryLoader("dataset")
@@ -35,8 +28,8 @@ def split_document(documents: list[Document]):
     return text_splitter.split_documents(documents)
 
 def clear_db():
-    if os.path.exists("database/chroma"):
-        shutil.rmtree("database/chroma")
+    if os.path.exists(DATABASE):
+        shutil.rmtree(DATABASE)
 
 def _calculate_and_update_chunk_ids(chunks):
     last_page_id = None
@@ -72,7 +65,7 @@ if __name__ == "__main__":
     chunks = _calculate_and_update_chunk_ids(split_document(documents))
 
     db = Chroma(
-        persist_directory="database/chroma", embedding_function=get_embedding_function()
+        persist_directory=DATABASE, embedding_function=get_embedding_function()
     )
 
     # create or update the data store.
