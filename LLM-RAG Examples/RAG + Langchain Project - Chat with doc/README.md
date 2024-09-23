@@ -47,3 +47,19 @@ We can now query the database to get the relevant data from the database.
 
 For the query, we'll need the database that we've created earlier, and we'll also need the embeddings for the query that we want to search for.
 ![alt text](assets/preparing_dataset_6.png)
+
+# How to run the code
+- Clone the repository
+- Install the requirements
+  ```bash
+  pip install -r requirements.txt
+  ```
+- Run the code
+  ```bash
+  python create_database.py
+  ```
+- Run the code
+  ```bash
+  python query.py "<prompt>"
+  # eg: python query.py "Who is alice ?"
+  ```
