@@ -6,12 +6,15 @@ langchain
 langchain-community
 langchain[docarray]
 langchain-openai
+langchain-chroma
 metaflow
 mlflow
 notebook
 openai
 pandas-summary
 panel
+pypdf
+pytest
 python-dotenv
 python-dotenv
 redlines
