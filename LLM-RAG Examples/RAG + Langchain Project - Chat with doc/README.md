@@ -15,3 +15,28 @@
   - Chroma is the AI-native open-source vector database. Chroma makes it easy to build LLM apps by making knowledge, facts, and skills pluggable for LLMs.
   - To store created chunks, we can use chroma database as shown below.
   ![alt text](assets/preparing_dataset_4.png)
+
+### What is vector Embeddings ?
+Embeddings are vector representations of text that captures their meaning. (It seems like list of numbers, but it is not just list of numbers, it is a representation of the text in a vector space, where similar words are close to each other in the vector space.)
+
+You can think of them as sort of coordinates in multi-dimensional space, and if two pieces of text are closely related to each other in meaning, then those coordinates will be close to each other in the vector space.
+The distance between these vectors can then be calculated pretty easily using cosine similarity or Euclidean distance, and this can be used to find similar pieces of text.
+![alt text](image.png)
+
+- To generate vector from a word, we need an LLM like OpenAI.
+  ```python
+  embedding_function = OpenAIEmbedding()
+  vector = embedding_function.embed_query("Hello, world!")
+  ```
+  It will generate a long list of numbers, which is a vector representation of the text "Hello, world!". Well the number itself is not very interesting though, but what is interesting is the relative distance between the vectors of different pieces of text.
+  ```python
+  from langchain.evaluation import load_evaluator
+
+  evaluator = load_evaluator("pairwise_embedding_distance")
+
+  # run the evaluation
+  x = evaluator.evaluate_string_pairs(prediction='apple', prediction_b='orange')
+
+  print(x)
+  {'score': 0.13493....}
+  ```
